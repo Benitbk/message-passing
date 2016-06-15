@@ -69,5 +69,10 @@ class CompleteInferringAlgorithm:
     #         likelihood *= Decimal(Decimal(edge.flip_probability) ** Decimal(statistic[1]))
     #     return float(likelihood.ln())
 
-    def print(self):
-        pass
+    def print_result(self):
+        s = ""
+        s += ('\t'.join(["{0:.3f}".format(edge.flip_probability) for edge in self.graph.edges]))
+        s += "\t%s" % self.calculate_log_likelihood()
+        print(s)
+
+
