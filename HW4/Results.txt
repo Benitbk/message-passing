@@ -301,7 +301,7 @@ calculate with the formula explained in class P(Xv = k, Xpiv = l|...). Store the
 Sum all the results in one matrix per vertex. Update now the parameters by the normalized calculated sum of expected
 sufficient statistics. if the difference in the log-probability is less than 0.001 stop. Otherwise repeat.
 
-
+Compared to Q2 i got better results for 2/3 of the provided files.
 
 
 
@@ -551,3 +551,4 @@ p1-2	p2-3	p2-4	p1-5	p5-6	p5-7	p1-8	p8-9	p9-10	log-prob	log-ld
 
 Notes: for choosing the initial parameters that gives the best results i ran multiple times until i got the best results.
 I improved every time until it converged.
+When i changed the threshold, the algorithm took more/less time to converge as expected.
