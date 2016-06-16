@@ -282,3 +282,40 @@ p1-2	p2-3	p2-4	p1-5	p5-6	p5-7	p1-8	p8-9	p9-10	log-prob	log-ld
 tree-data-2c.txt:
 p1-2	p2-3	p2-4	p1-5	p5-6	p5-7	p1-8	p8-9	p9-10	log-prob	log-ld
 
+
+
+
+
+
+
+
+
+Q3:
+Sumary:
+Like the previous algorithm, this one runs in loop:
+for each data instance - run the MostProbableAssignmentAlgorithm and MessagePassingAlgorithm to compute the log-likelihood
+and the log-probability.
+for each vertex in the graph iterate on 4 value possibilities {0,1} for the vertex and its parent, for each possibility
+calculate with the formula explained in class P(Xv = k, Xpiv = l|...). Store the results for each data instance.
+Sum all the results in one matrix per vertex. Update now the parameters by the normalized calculated sum of expected
+sufficient statistics. if the difference in the log-probability is less than 0.001 stop. Otherwise repeat.
+
+
+
+
+
+tree-data-2a.txt:
+p1-2	p2-3	p2-4	p1-5	p5-6	p5-7	p1-8	p8-9	p9-10	log-prob	log-ld
+
+
+
+
+
+tree-data-2b.txt:
+p1-2	p2-3	p2-4	p1-5	p5-6	p5-7	p1-8	p8-9	p9-10	log-prob	log-ld
+
+
+
+
+tree-data-2c.txt:
+p1-2	p2-3	p2-4	p1-5	p5-6	p5-7	p1-8	p8-9	p9-10	log-prob	log-ld
