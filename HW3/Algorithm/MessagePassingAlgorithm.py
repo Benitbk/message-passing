@@ -84,10 +84,11 @@ class MessagePassingAlgorithm:
     # sum of multiplication between the phi and the marginal of father
     def calculate_distribute_message(self, vertex: Vertex, edge: Edge):
         for i in [0, 1]:
-            self.distribute_messages[edge][i] = ((self.phi_matrix[edge][0][i] * self.marginals[vertex][0]) \
-                                                 / self.collect_messages[edge][0]) + \
-                                                ((self.phi_matrix[edge][1][i] * self.marginals[vertex][1]) \
-                                                 / self.collect_messages[edge][1])
+            self.distribute_messages[edge][i] = 0
+            if self.collect_messages[edge][0] != 0:
+                self.distribute_messages[edge][i] += (self.phi_matrix[edge][0][i] * self.marginals[vertex][0]) / self.collect_messages[edge][0]
+            if self.collect_messages[edge][1] != 0:
+                self.distribute_messages[edge][i] += (self.phi_matrix[edge][1][i] * self.marginals[vertex][1])/self.collect_messages[edge][1]
 
     @staticmethod
     def generate_transmission_distribution_matrix(edge: Edge):

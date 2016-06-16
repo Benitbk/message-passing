@@ -23,8 +23,9 @@ elif option is 'M':
                                                      parser.data, parser.variables)
     algorithm.start(initial_parameters)
 elif option is 'E':
-    initial_parameters = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.4, 0.4, 0.4 ]
-    initial_parameters = [0.6] * len(graph.vertices)
+    initial_parameters = [0.999, 0.444, 0.527, 0.121, 0.151, 0.507, 0.448, 0.2, 0.2]
+    #initial_parameters = [0.6] * len(graph.vertices)
+    #initial_parameters = [0.2] * len(graph.vertices)
 
     algorithm = ExpectationMaximizationAlgorithm(graph, graph.vertices[0],
                                                      parser.data, parser.variables)
